@@ -75,7 +75,7 @@ a { color: inherit; }
 }
 
 .nav-logo {
-  height: 56px; width: auto; flex-shrink: 0;
+  height: 70px; width: auto; flex-shrink: 0;
   filter: invert(1) hue-rotate(150deg) saturate(1.4) brightness(1.3);
 }
 
