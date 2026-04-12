@@ -276,6 +276,10 @@ a { color: inherit; }
 .fi-d4 { transition-delay: 0.4s; }
 .fi-d5 { transition-delay: 0.5s; }
 
+/* Fallback: show content after 100ms if JS hasn't loaded */
+@keyframes fi-fallback { to { opacity: 1; transform: translateY(0); } }
+.fi { animation: fi-fallback 0.01s 0.1s forwards; }
+
 /* ══════════════════════════════
    RESPONSIVE
 ══════════════════════════════ */
