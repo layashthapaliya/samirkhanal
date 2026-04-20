@@ -32,6 +32,18 @@
 .back-crumb { display:inline-flex; align-items:center; gap:8px; color:var(--teal); font-family:var(--ff-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; margin-bottom:36px; transition:color 0.2s; }
 .back-crumb:hover { color:var(--gold); }
 @media(max-width:640px){ .book-cta { flex-direction:column; } }
+/* Book covers grid */
+.books-grid { display:flex; gap:40px; flex-wrap:wrap; margin-bottom:48px; justify-content:flex-start; }
+.book-card { background:rgba(200,144,58,0.06); border:1px solid rgba(200,144,58,0.2); border-radius:var(--r-md); padding:28px; display:flex; gap:28px; align-items:flex-start; flex:1; min-width:280px; max-width:580px; transition:all 0.25s; }
+.book-card:hover { background:rgba(200,144,58,0.12); border-color:rgba(200,144,58,0.45); }
+.book-cover-link { flex-shrink:0; display:block; }
+.book-cover-img { width:110px; height:auto; border-radius:4px; box-shadow:0 6px 24px rgba(0,0,0,0.5); display:block; transition:transform 0.25s; }
+.book-cover-link:hover .book-cover-img { transform:scale(1.04); }
+.book-info { display:flex; flex-direction:column; gap:8px; }
+.book-title { font-family:var(--ff-serif); font-size:18px; color:var(--gold-lt); margin-bottom:4px; line-height:1.4; }
+.book-desc { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.75; }
+.book-links { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+@media(max-width:640px){ .books-grid { flex-direction:column; } .book-card { flex-direction:column; align-items:center; } }
 </style>
 </head>
 <body>
@@ -63,29 +75,37 @@
   </div>
   <section class="section section-dark">
     <div class="container">
-      <div class="book-cta fi">
-        <div class="book-ico">📘</div>
-        <div>
-          <div class="book-title">Textbook: Bioenergy: Principles and Applications</div>
-          <p class="book-desc">Yebo Li, Samir Kumar Khanal</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
-            <a href="https://books.google.com.hk/books?hl=en&lr=&id=hZRZDgAAQBAJ&oi=fnd&pg=PR19&dq=bioenergy+principles+and+applications&ots=O8O_SjJasn&sig=WvJt2-3mHUPHQXwg5-6E-cGLxXs&redir_esc=y#v=onepage&q=bioenergy%20principles%20and%20applications&f=false" target="_blank" class="pub-doi">📖 Google Scholar →</a>
-            <a href="https://www.wiley.com/en-jp/Bioenergy%3A+Principles+and+Applications-p-9781118568378" target="_blank" class="pub-doi">🔗 Publisher Site →</a>
+      <div class="books-grid fi">
+        <!-- Book 1: Bioenergy -->
+        <div class="book-card">
+          <a href="https://www.wiley.com/en-jp/Bioenergy%3A+Principles+and+Applications-p-9781118568378" target="_blank" rel="noopener" class="book-cover-link">
+            <img src="book-bioenergy.png" alt="Bioenergy: Principles and Applications cover" class="book-cover-img">
+          </a>
+          <div class="book-info">
+            <div class="book-title">Bioenergy: Principles and Applications</div>
+            <p class="book-desc">Yebo Li, Samir Kumar Khanal<br>Wiley Blackwell</p>
+            <div class="book-links">
+              <a href="https://books.google.com.hk/books?hl=en&lr=&id=hZRZDgAAQBAJ&oi=fnd&pg=PR19&dq=bioenergy+principles+and+applications&ots=O8O_SjJasn&sig=WvJt2-3mHUPHQXwg5-6E-cGLxXs&redir_esc=y#v=onepage&q=bioenergy%20principles%20and%20applications&f=false" target="_blank" rel="noopener" class="pub-doi">📖 Google Scholar →</a>
+              <a href="https://www.wiley.com/en-jp/Bioenergy%3A+Principles+and+Applications-p-9781118568378" target="_blank" rel="noopener" class="pub-doi">🔗 Publisher Site →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Book 2: Anaerobic Biotechnology -->
+        <div class="book-card fi-d1">
+          <a href="https://www.wiley.com/en-us/Anaerobic+Biotechnology+for+Bioenergy+Production%3A+Principles+and+Applications-p-9780813823461" target="_blank" rel="noopener" class="book-cover-link">
+            <img src="book-anaerobic.png" alt="Anaerobic Biotechnology for Bioenergy Production cover" class="book-cover-img">
+          </a>
+          <div class="book-info">
+            <div class="book-title">Anaerobic Biotechnology for Bioenergy Production: Principles and Applications</div>
+            <p class="book-desc">Khanal, S.K. (2008).<br>Wiley-Blackwell, 320 pp.</p>
+            <div class="book-links">
+              <a href="https://scholar.google.com/scholar?q=%22Anaerobic+Biotechnology+for+Bioenergy+Production%3A+Principles+and+Applications%22+Khanal" target="_blank" rel="noopener" class="pub-doi">📖 Google Scholar →</a>
+              <a href="https://www.wiley.com/en-us/Anaerobic+Biotechnology+for+Bioenergy+Production%3A+Principles+and+Applications-p-9780813823461" target="_blank" rel="noopener" class="pub-doi">🔗 Publisher Site →</a>
+            </div>
           </div>
         </div>
       </div>
       <div class="container">
-      <div class="book-cta fi fi-d1">
-        <div class="book-ico">📘</div>
-        <div>
-          <div class="book-title">Book: Anaerobic Biotechnology for Bioenergy Production: Principles and Applications.</div>
-          <p class="book-desc">Khanal, S.K. (2008). <em>Anaerobic Biotechnology for Bioenergy Production: Principles and Applications.</em> Wiley-Blackwell, 320 pp.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
-            <a href="https://scholar.google.com/scholar?q=%22Anaerobic+Biotechnology+for+Bioenergy+Production%3A+Principles+and+Applications%22+Khanal" target="_blank" class="pub-doi">📖 Google Scholar →</a>
-            <a href="https://www.wiley.com/en-us/Anaerobic+Biotechnology+for+Bioenergy+Production%3A+Principles+and+Applications-p-9780813823461" target="_blank" class="pub-doi">🔗 Publisher Site →</a>
-          </div>
-        </div>
-      </div>
       
       
       <div style="text-align: center; margin-bottom: 48px;" class="fi">
@@ -283,7 +303,7 @@
           <div class="pub-meta-row">
             <span class="pub-yr-badge">2022</span>
             <span class="pub-journal">ACS ES&T Engineering</span>
-            <span class="pub-cat-tag">Research Article</span>
+            <span class="pub-cat-tag">Review</span>
           </div>
           <div class="pub-title"><a href="https://pubs.acs.org/doi/full/10.1021/acsestengg.2c00117" target="_blank" rel="noopener">Untapped potential: Applying microbubble and nanobubble technology in water and wastewater treatment and ecological restoration</a></div>
           <div class="pub-authors">Zhou, S., Marcelino, K. R., Wongkiew, S., Sun, L., Guo, W., <strong>Khanal, S. K.</strong>, & Lu, H.</div>
