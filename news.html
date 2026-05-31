@@ -107,6 +107,44 @@
   width: 18px;
   height: 18px;
 }
+
+/* Grant card responsive layout */
+.grant-inner {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  padding: 48px 56px;
+}
+.grant-text { flex: 1; min-width: 0; }
+.grant-badge { flex-shrink: 0; }
+
+/* Conference header responsive */
+.conf-header {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+.conf-badge-wrap { flex-shrink: 0; }
+
+@media (max-width: 700px) {
+  .grant-inner {
+    flex-direction: column;
+    padding: 28px 20px;
+    gap: 24px;
+  }
+  .grant-badge { width: 100%; }
+  .grant-badge > div { width: 100%; box-sizing: border-box; }
+
+  .conf-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .conf-badge-wrap { width: 100%; }
+  .conf-badge-wrap > div { box-sizing: border-box; }
+}
 </style>
 </head>
 <body>
@@ -213,8 +251,8 @@
           <div style="padding:8px 0;background:var(--gold);text-align:center;">
             <span style="font-family:var(--ff-mono);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);">🎉 HKUST Sustainable Smart Campus Living Lab Grant · 2025</span>
           </div>
-          <div style="padding:48px 56px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;">
-            <div>
+          <div class="grant-inner">
+            <div class="grant-text">
               <div style="font-family:var(--ff-mono);font-size:11px;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px;">Grant Award</div>
               <h3 style="font-family:var(--ff-serif);font-size:clamp(20px,2.5vw,28px);color:#fff;line-height:1.35;margin-bottom:20px;">Green High-Rise Cleaning Nanobubble Technology with Continuous-Power, Minimal-Disruption Drone Operations</h3>
               <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:24px;">Our project has been selected by the Sustainable Smart Campus (SSC) Committee for a Living Lab (SSC) funding award. The Committee recognized that our project embraces the central vision of the Living Lab by addressing a sustainability issue with a smart and innovative approach.</p>
@@ -223,12 +261,73 @@
                 <div style="font-size:13px;color:rgba(255,255,255,0.85);font-weight:600;">Prof. Samir Kumar Khanal &amp; Mr. Dickson Li</div>
               </div>
             </div>
-            <div style="text-align:center;flex-shrink:0;">
-              <div style="background:var(--gold);border-radius:12px;padding:28px 32px;box-shadow:0 8px 32px rgba(200,144,58,0.4);">
+            <div class="grant-badge">
+              <div style="background:var(--gold);border-radius:12px;padding:28px 32px;box-shadow:0 8px 32px rgba(200,144,58,0.4);text-align:center;">
                 <div style="font-family:var(--ff-serif);font-size:42px;font-weight:700;color:var(--ink);line-height:1;">HK$</div>
                 <div style="font-family:var(--ff-serif);font-size:52px;font-weight:700;color:var(--ink);line-height:1.1;">600K</div>
                 <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-top:6px;opacity:0.8;">Funding Awarded</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conference Section -->
+      <div style="margin-top: 96px;">
+        <div class="section-hd centered fi">
+          <span class="eyebrow eyebrow-gold">🌏 Upcoming International Event</span>
+          <h2 class="heading">Joint Mini-Symposium on <em>Resource Recovery</em></h2>
+          <div class="rule centered"></div>
+        </div>
+        <div class="fi" style="max-width:900px;margin:48px auto 0;background:linear-gradient(135deg,var(--ink) 0%,#0a2a4a 100%);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.25);border:1px solid rgba(10,112,117,0.4);">
+          <div style="padding:8px 0;background:var(--teal);text-align:center;">
+            <span style="font-family:var(--ff-mono);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;">RR2026 · June 29–July 1, 2026 · Bali, Indonesia</span>
+          </div>
+          <div style="padding:48px 56px;">
+            <div class="conf-header">
+              <div>
+                <div style="font-family:var(--ff-mono);font-size:11px;color:var(--teal-mid);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">International Symposium</div>
+                <h3 style="font-family:var(--ff-serif);font-size:clamp(20px,2.5vw,28px);color:#fff;line-height:1.35;margin-bottom:20px;">Advancing Sustainability and Climate Resilience through Organic Waste Valorization</h3>
+                <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.85;">A compact three-day international gathering co-hosted by <strong style="color:#fff;">HKUST</strong>, <strong style="color:#fff;">Udayana University</strong> (host, Bali), and <strong style="color:#fff;">Korea University</strong>. The symposium brings together 50–60 researchers and practitioners to share the latest advances in resource recovery, anaerobic digestion, wastewater treatment, and climate-resilient waste valorization.</p>
+              </div>
+              <div class="conf-badge-wrap">
+                <div style="background:rgba(10,112,117,0.25);border:1px solid rgba(10,112,117,0.6);border-radius:12px;padding:24px 28px;text-align:center;">
+                  <div style="font-size:28px;margin-bottom:8px;">🏝️</div>
+                  <div style="font-family:var(--ff-serif);font-size:18px;color:#fff;font-weight:500;">Bali</div>
+                  <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">Indonesia</div>
+                </div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:32px;">
+              <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:16px 18px;">
+                <div style="font-family:var(--ff-mono);font-size:10px;color:var(--teal-mid);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Venue</div>
+                <div style="font-size:13px;color:#fff;">Engineering Faculty, Udayana University, Jimbaran</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:16px 18px;">
+                <div style="font-family:var(--ff-mono);font-size:10px;color:var(--teal-mid);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Dates</div>
+                <div style="font-size:13px;color:#fff;">June 29 – July 1, 2026</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:16px 18px;">
+                <div style="font-family:var(--ff-mono);font-size:10px;color:var(--teal-mid);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Format</div>
+                <div style="font-size:13px;color:#fff;">In-person · 50–60 participants · 5 Sessions · 5 Keynotes</div>
+              </div>
+            </div>
+            <div style="margin-bottom:28px;">
+              <div style="font-family:var(--ff-mono);font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;">Session Topics</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span style="background:rgba(10,112,117,0.2);border:1px solid rgba(10,112,117,0.4);color:var(--teal-mid);font-size:12px;padding:5px 12px;border-radius:20px;">Anaerobic Digestion</span>
+                <span style="background:rgba(10,112,117,0.2);border:1px solid rgba(10,112,117,0.4);color:var(--teal-mid);font-size:12px;padding:5px 12px;border-radius:20px;">Wastewater Treatment</span>
+                <span style="background:rgba(10,112,117,0.2);border:1px solid rgba(10,112,117,0.4);color:var(--teal-mid);font-size:12px;padding:5px 12px;border-radius:20px;">Resource Recovery</span>
+                <span style="background:rgba(10,112,117,0.2);border:1px solid rgba(10,112,117,0.4);color:var(--teal-mid);font-size:12px;padding:5px 12px;border-radius:20px;">Biological Processes</span>
+                <span style="background:rgba(10,112,117,0.2);border:1px solid rgba(10,112,117,0.4);color:var(--teal-mid);font-size:12px;padding:5px 12px;border-radius:20px;">Sustainability &amp; Climate</span>
+                <span style="background:rgba(10,112,117,0.2);border:1px solid rgba(10,112,117,0.4);color:var(--teal-mid);font-size:12px;padding:5px 12px;border-radius:20px;">Collaborative Research</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+              <a href="https://uu-hkust-ku-symposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-teal" style="display:inline-flex;align-items:center;gap:8px;">
+                Visit Symposium Website
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a> 
             </div>
           </div>
         </div>
