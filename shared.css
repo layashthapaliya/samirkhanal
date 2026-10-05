@@ -315,3 +315,35 @@ a { color: inherit; }
 .chip-gold {
   background: rgba(200,144,58,0.1); border-color: rgba(200,144,58,0.25); color: var(--gold);
 }
+
+/* ── NAV: APPLY BUTTON ── */
+.nav-links a.nav-apply {
+  background: var(--gold); color: var(--ink); font-weight: 600;
+  margin-left: 8px; padding: 8px 16px; border-radius: 100px;
+  box-shadow: 0 2px 12px rgba(200,144,58,0.3);
+}
+.nav-links a.nav-apply::after { display: none; }
+.nav-links a.nav-apply:hover, .nav-links a.nav-apply.active { background: var(--gold-lt); color: var(--ink); }
+@media (max-width: 768px) {
+  .nav-links a.nav-apply { margin: 8px 0 0; text-align: center; border-radius: var(--r-sm); }
+}
+
+/* ── NAV: keep every menu item on a single line ── */
+.nav-links { flex-shrink: 0; white-space: nowrap; }
+.nav-links a { white-space: nowrap; }
+.nav-brand { min-width: 0; }
+.nav-label { min-width: 0; }
+@media (max-width: 1180px) {
+  .nav-links a { padding: 8px 7px; font-size: 11px; letter-spacing: 0.05em; }
+  .nav-label strong { font-size: 14px; }
+  .nav-label span { font-size: 9px; }
+}
+@media (max-width: 960px) {
+  .nav-label span { display: none; }
+  .nav-links a { padding: 8px 5px; font-size: 10.5px; letter-spacing: 0.03em; }
+  .nav-links a.nav-apply { padding: 7px 12px; margin-left: 4px; }
+}
+@media (max-width: 768px) {
+  .nav-links { white-space: normal; flex-shrink: 1; }
+  .nav-links a { font-size: 12px; padding: 8px 9px; letter-spacing: 0.07em; }
+}
