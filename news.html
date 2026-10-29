@@ -145,6 +145,81 @@
   .conf-badge-wrap { width: 100%; }
   .conf-badge-wrap > div { box-sizing: border-box; }
 }
+
+/* ===== October 2026 event news (Living Lab Week + Eco Expo Asia) ===== */
+.ev-wrap { max-width: 1000px; margin: 0 auto 96px; }
+.ev-card { background: linear-gradient(135deg, var(--ink) 0%, #0a2a4a 100%); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.25); border: 1px solid rgba(10,112,117,0.4); margin-top: 48px; }
+.ev-card.gold { border-color: rgba(200,144,58,0.35); }
+.ev-ribbon { padding: 9px 16px; background: var(--teal); text-align: center; font-family: var(--ff-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; line-height: 1.5; }
+.ev-card.gold .ev-ribbon { background: var(--gold); color: var(--ink); }
+.ev-body { padding: 44px 52px; }
+.ev-kicker { font-family: var(--ff-mono); font-size: 11px; color: var(--teal-mid); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+.ev-card.gold .ev-kicker { color: var(--gold-lt); }
+.ev-title { font-family: var(--ff-serif); font-size: clamp(20px, 2.6vw, 28px); color: #fff; line-height: 1.35; margin-bottom: 18px; }
+.ev-title em { color: var(--gold-lt); font-style: italic; }
+.ev-text { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.85; margin-bottom: 14px; }
+.ev-text strong { color: #fff; }
+.ev-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin: 28px 0; }
+.ev-fact { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.ev-fact-l { font-family: var(--ff-mono); font-size: 10px; color: var(--teal-mid); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.ev-card.gold .ev-fact-l { color: var(--gold-lt); }
+.ev-fact-v { font-size: 13px; color: #fff; line-height: 1.5; overflow-wrap: anywhere; }
+.ev-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 8px 0 30px; }
+.ev-stat { background: rgba(10,112,117,0.25); border: 1px solid rgba(10,112,117,0.6); border-radius: 12px; padding: 18px 12px; text-align: center; }
+.ev-stat-n { font-family: var(--ff-serif); font-size: clamp(22px, 3.4vw, 32px); font-weight: 700; color: #fff; line-height: 1.1; }
+.ev-stat-l { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+.ev-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 30px; }
+.ev-tag { background: rgba(10,112,117,0.2); border: 1px solid rgba(10,112,117,0.4); color: var(--teal-mid); font-size: 12px; padding: 5px 12px; border-radius: 20px; }
+.ev-card.gold .ev-tag { background: rgba(200,144,58,0.15); border-color: rgba(200,144,58,0.4); color: var(--gold-lt); }
+
+/* Responsive photo galleries (images never overflow, never get cropped on phones) */
+.ev-img { display: block; width: 100%; height: 100%; max-width: 100%; object-fit: cover; border-radius: 10px; background: rgba(255,255,255,0.05); cursor: zoom-in; }
+.ev-fig { margin: 0; min-width: 0; }
+.ev-fig figcaption { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; margin-top: 8px; }
+.ev-video { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; background: #000; }
+/* Living Lab: three media items share one row height (column widths follow aspect ratios) */
+.ev-gal-ll { display: grid; grid-template-columns: 1.333fr 0.75fr 0.5625fr; gap: 14px; margin-bottom: 30px; align-items: stretch; }
+.ev-gal-ll .ev-fig { display: flex; flex-direction: column; }
+.ev-gal-ll .ev-media { flex: 1; min-height: 0; aspect-ratio: auto; }
+.ev-gal-ll .ev-fig:nth-child(1) .ev-media { aspect-ratio: 4/3; }
+.ev-gal-ll .ev-fig:nth-child(2) .ev-media { aspect-ratio: 3/4; }
+.ev-gal-ll .ev-fig:nth-child(3) .ev-media { aspect-ratio: 9/16; }
+/* Expo: even tile grid (3 square tiles over 2 wider tiles); booth photo goes full-width on phones */
+.ev-gal-expo { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 30px; }
+.ev-gal-expo .ev-fig { grid-column: span 2; }
+.ev-gal-expo .ev-fig .ev-img { height: auto; aspect-ratio: 1/1; object-position: 50% 30%; }
+.ev-gal-expo .ev-fig.w { grid-column: span 3; }
+.ev-gal-expo .ev-fig.w .ev-img { aspect-ratio: 4/3; object-position: center; }
+
+/* Lightbox (tap/click a photo to enlarge) */
+.ev-lb { position: fixed; inset: 0; z-index: 9999; background: rgba(8,17,31,0.92); display: none; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
+.ev-lb.open { display: flex; }
+.ev-lb img { max-width: 100%; max-height: 100%; border-radius: 8px; object-fit: contain; }
+.ev-lb-x { position: absolute; top: 12px; right: 16px; color: #fff; font-size: 34px; line-height: 1; background: none; border: 0; cursor: pointer; padding: 6px 10px; }
+
+@media (max-width: 900px) {
+  .ev-body { padding: 34px 28px; }
+  .ev-gal-expo { grid-template-columns: repeat(2, 1fr); }
+  .ev-gal-expo .ev-fig, .ev-gal-expo .ev-fig.w { grid-column: span 1; }
+  .ev-gal-expo .ev-fig.hero { grid-column: 1 / -1; order: -1; }
+  .ev-gal-expo .ev-fig.hero .ev-img { aspect-ratio: 4/3; object-position: center; }
+}
+@media (max-width: 700px) {
+  .ev-wrap { margin-bottom: 64px; }
+  .ev-body { padding: 26px 18px; }
+  .ev-ribbon { font-size: 10px; letter-spacing: 0.1em; }
+  .ev-stats { gap: 8px; }
+  .ev-stat { padding: 14px 6px; }
+  .ev-gal-ll { grid-template-columns: 1fr; gap: 18px; }
+  .ev-gal-ll .ev-fig:nth-child(1) .ev-media { aspect-ratio: 4/3; }
+  .ev-gal-ll .ev-fig:nth-child(2) .ev-media { aspect-ratio: 3/4; }
+  .ev-gal-ll .ev-fig:nth-child(3) { max-width: 320px; width: 100%; margin: 0 auto; }
+  .ev-gal-ll .ev-fig:nth-child(3) .ev-media { aspect-ratio: 9/16; }
+}
+@media (max-width: 480px) {
+  .ev-gal-expo { grid-template-columns: 1fr; gap: 16px; }
+  .ev-gal-expo .ev-fig .ev-img { aspect-ratio: auto; height: auto; }
+}
 </style>
 </head>
 <body>
@@ -214,6 +289,114 @@
           </div>
         </div>
       </div>
+
+      <!-- ===== OCTOBER 2026 EVENTS: Eco Expo Asia + Living Lab Week ===== -->
+      <div class="ev-wrap">
+        <div class="section-hd centered fi" style="margin-bottom:0;">
+          <span class="eyebrow">📅 Events · October 2026</span>
+          <h2 class="heading">Showcasing Our Work at <em>HKUST &amp; Beyond</em></h2>
+          <div class="rule centered"></div>
+        </div>
+
+        <!-- Eco Expo Asia 2026 -->
+        <div class="ev-card gold fi" id="eco-expo-asia-2026">
+          <div class="ev-ribbon">Eco Expo Asia 2026 · October 26–29, 2026 · AsiaWorld-Expo, Hong Kong</div>
+          <div class="ev-body">
+            <div class="ev-kicker">Trade Fair · Exhibition</div>
+            <h3 class="ev-title">Our Group Takes Part in <em>Eco Expo Asia 2026</em></h3>
+            <p class="ev-text">Our group took part in <strong>Eco Expo Asia 2026</strong>, the HKTDC environmental protection fair held at AsiaWorld-Expo, Hong Kong International Airport. Under the theme <strong>&ldquo;Connecting the World for a Sustainable Future&rdquo;</strong>, the fair brings together green products, equipment and technologies in a hybrid &ldquo;EXHIBITION+&rdquo; format: a physical exhibition alongside the online Click2Match business-matching platform that connects buyers and exhibitors worldwide.</p>
+            <p class="ev-text">The four-day fair showcases solutions across waste management and the circular economy, green transportation, water treatment and other green technologies, and also features a Startup Zone, the Eco Asia Conference and a free Public Day on the final day. Our team represented HKUST at the expo, connecting with visitors from industry and the wider community.</p>
+            <div class="ev-facts">
+              <div class="ev-fact"><div class="ev-fact-l">Dates</div><div class="ev-fact-v">October 26–29, 2026 (physical fair)</div></div>
+              <div class="ev-fact"><div class="ev-fact-l">Venue</div><div class="ev-fact-v">AsiaWorld-Expo, Hong Kong International Airport, Lantau</div></div>
+              <div class="ev-fact"><div class="ev-fact-l">Organizer</div><div class="ev-fact-v">Hong Kong Trade Development Council (HKTDC)</div></div>
+            </div>
+            <div class="ev-tags">
+              <span class="ev-tag">Waste Management &amp; Circular Economy</span>
+              <span class="ev-tag">Green Technology</span>
+              <span class="ev-tag">Startup Zone</span>
+              <span class="ev-tag">Eco Asia Conference</span>
+              <span class="ev-tag">Business Matching</span>
+            </div>
+            <div class="ev-gal-expo">
+              <figure class="ev-fig">
+                <img class="ev-img" src="expo2.jpg" srcset="expo2-800.jpg 800w, expo2.jpg 1400w" sizes="(max-width: 480px) 92vw, (max-width: 900px) 46vw, 300px" width="1400" height="1050" loading="lazy" decoding="async" alt="Group members standing beside vertical plant-growing towers at the HKUST Living Lab booth">
+              </figure>
+              <figure class="ev-fig">
+                <img class="ev-img" src="expo1.jpg" srcset="expo1-800.jpg 800w, expo1.jpg 1400w" sizes="(max-width: 480px) 92vw, (max-width: 900px) 46vw, 300px" width="1050" height="1400" loading="lazy" decoding="async" alt="Visitors and team members at the HKUST booth during Eco Expo Asia 2026">
+              </figure>
+              <figure class="ev-fig">
+                <img class="ev-img" src="expo4.jpg" srcset="expo4-800.jpg 800w, expo4.jpg 1400w" sizes="(max-width: 480px) 92vw, (max-width: 900px) 46vw, 300px" width="1050" height="1400" loading="lazy" decoding="async" alt="Team members and visitors discussing the research posters at the HKUST expo booth">
+              </figure>
+              <figure class="ev-fig w hero">
+                <img class="ev-img" src="expo3.jpg" srcset="expo3-800.jpg 800w, expo3.jpg 1400w" sizes="(max-width: 480px) 92vw, (max-width: 900px) 46vw, 300px" width="1400" height="1050" loading="lazy" decoding="async" alt="The HKUST booth at Eco Expo Asia 2026 with team members standing in front of the exhibition display">
+                </figure>
+              <figure class="ev-fig w">
+                <img class="ev-img" src="expo5.jpg" srcset="expo5-800.jpg 800w, expo5.jpg 1400w" sizes="(max-width: 480px) 92vw, (max-width: 900px) 46vw, 300px" width="1400" height="1050" loading="lazy" decoding="async" alt="A crowd of visitors gathered at the HKUST pavilion at Eco Expo Asia 2026">
+              </figure>
+            </div>
+            <a href="https://www.hktdc.com/event/ecoexpoasia/en" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="display:inline-flex;align-items:center;gap:8px;">
+              Visit Eco Expo Asia Website
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Living Lab Week 2026 -->
+        <div class="ev-card fi" id="living-lab-week-2026">
+          <div class="ev-ribbon">Living Lab Week 2026 · October 21–23, 2026 · HKUST Campus</div>
+          <div class="ev-body">
+            <div class="ev-kicker">Campus Exhibition · Sustainability</div>
+            <h3 class="ev-title">Living Lab Week 2026: <em>&ldquo;Bridging Possibilities&rdquo;</em></h3>
+            <p class="ev-text">We demonstrated our <strong>Green High-Rise Cleaning</strong> project in front of the HKUST community during <strong>Living Lab Week 2026</strong>, hosted by the University's Sustainability/Net-Zero Office. This year's event marked the launch of the <strong>10th Call for Proposals</strong>, celebrating a decade of turning the HKUST campus into a living testbed for sustainability and innovation, and brought together researchers, students, industry, government and community partners.</p>
+            <p class="ev-text">Our project, led by <strong>Prof. Samir Kumar Khanal and Mr. Dickson Li</strong> with Skybotics, applies nanobubble technology with continuous-power, minimal-disruption drone operations to clean building facades more safely and with fewer resources. Visitors saw the system on display and watched a live demonstration.</p>
+            <div class="ev-facts">
+              <div class="ev-fact"><div class="ev-fact-l">Dates</div><div class="ev-fact-v">October 21–23, 2026</div></div>
+              <div class="ev-fact"><div class="ev-fact-l">Venue</div><div class="ev-fact-v">Tsang Shiu Tim Art Hall &amp; LTA–LTC, HKUST</div></div>
+              <div class="ev-fact"><div class="ev-fact-l">Organizer</div><div class="ev-fact-v">Sustainability/Net-Zero Office, HKUST</div></div>
+            </div>
+            <div class="ev-stats">
+              <div class="ev-stat"><div class="ev-stat-n">≈50%</div><div class="ev-stat-l">Water saving</div></div>
+              <div class="ev-stat"><div class="ev-stat-n">30–40%</div><div class="ev-stat-l">Energy saving</div></div>
+              <div class="ev-stat"><div class="ev-stat-n">≈30%</div><div class="ev-stat-l">Cost saving</div></div>
+            </div>
+            <div class="ev-gal-ll">
+              <figure class="ev-fig">
+                <div class="ev-media"><img class="ev-img" src="livinglab1.jpg" srcset="livinglab1-800.jpg 800w, livinglab1.jpg 1400w" sizes="(max-width: 700px) 92vw, 440px" width="1400" height="1050" loading="lazy" decoding="async" alt="Prof. Khanal and team members standing in front of the Green High-Rise Cleaning poster at Living Lab Week 2026"></div>
+                <figcaption>The team at the Green High-Rise Cleaning project booth.</figcaption>
+              </figure>
+              <figure class="ev-fig">
+                <div class="ev-media"><img class="ev-img" src="livinglab3.jpg" srcset="livinglab3-800.jpg 800w, livinglab3.jpg 1400w" sizes="(max-width: 700px) 92vw, 250px" width="1050" height="1400" loading="lazy" decoding="async" alt="Green High-Rise Cleaning project poster and nanobubble drone cleaning system on display"></div>
+                <figcaption>Project poster and drone cleaning system on display.</figcaption>
+              </figure>
+              <figure class="ev-fig">
+                <div class="ev-media"><video class="ev-video" controls playsinline preload="none" poster="livinglab2-poster.jpg" aria-label="Video of the live project demonstration in front of the HKUST community"><source src="livinglab2.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
+                <figcaption>Live demonstration for the HKUST community.</figcaption>
+              </figure>
+            </div>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+              <a href="https://calendar.hkust.edu.hk/events/join-us-living-lab-week-2026-bridging-possibilities" target="_blank" rel="noopener noreferrer" class="btn btn-teal" style="display:inline-flex;align-items:center;gap:8px;">
+                View Event Details
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev-lb" id="evLb" role="dialog" aria-label="Enlarged photo"><button class="ev-lb-x" aria-label="Close">&times;</button><img alt=""></div>
+      <script>
+      (function () {
+        var lb = document.getElementById('evLb'); if (!lb) return;
+        var big = lb.querySelector('img');
+        document.querySelectorAll('.ev-img').forEach(function (im) {
+          im.addEventListener('click', function () { big.src = im.currentSrc || im.src; big.alt = im.alt; lb.classList.add('open'); });
+        });
+        function close() { lb.classList.remove('open'); big.removeAttribute('src'); }
+        lb.addEventListener('click', close);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      })();
+      </script>
 
       <div class="section-hd centered">
         <span class="eyebrow">Annual Highlights</span>
