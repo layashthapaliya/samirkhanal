@@ -417,3 +417,13 @@ a { color: inherit; }
   .nav-logo { height: 46px; }
   .nav-label strong { font-size: 12.5px; }
 }
+
+/* ── Clarivate Highly Cited Researchers 2026 (screenshot + small badge text) ── */
+.nf-badge-n.sm { font-size: 38px; line-height: 1.1; }
+.hcr-shot { position: relative; z-index: 1; margin: 0 52px 44px; }
+.hcr-shot .ev-img { height: auto; object-fit: contain; aspect-ratio: auto; background: #fff; border: 1px solid rgba(200,144,58,0.45); box-shadow: 0 10px 36px rgba(0,0,0,0.35); }
+.hcr-shot figcaption { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.5; margin-top: 10px; text-align: center; }
+@media (max-width: 900px) {
+  .nf-badge-n.sm { font-size: 28px; }
+  .hcr-shot { margin: 0 22px 30px; }
+}
